@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora Simples</title>
+    <link rel="shortcut icon" href="./img/ico-d.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <section class="container"> 
+        <button class="btnHistory">Historico</button>
+        <div class="b-gray disabilita"></div>
+        <span class="operacao"></span>
+        <input class="visor" placeholder="0" disabled>
+        <input type="button" class="cReset" value="C">
+        <input type="button" class="divisao" value="/">
+        <input type="button" class="ponto" value=".">
+        <button class="dell">
+            <i dell class="fa-solid fa-delete-left  "></i>
+        </button>
+        <input type="button" class="um" value="1">
+        <input type="button" class="dois" value="2">
+        <input type="button" class="tres" value="3">
+        <input type="button" class="quatro" value="4">
+        <input type="button" class="cinco" value="5">
+        <input type="button" class="seis" value="6">
+        <input type="button" class="sete" value="7">
+        <input type="button" class="oito" value="8">
+        <input type="button" class="nove" value="9">
+        <input type="button" class="zero" value="0">
+        <input type="button" class="multiplicacao" value="*">
+        <input type="button" class="subtracao" value="-">
+        <input type="button" class="porcentagem" value="%">
+        <input type="button" class="adicao" value="+">
+        <input type="button" class="igual" value="=">
+        <aside class="historico disabilita">
+            <h4>Historico</h4>
+            <p class="resultHistorico"></p>
+        </aside>
+    </section>
+    <script src="https://kit.fontawesome.com/93e62dc2be.js" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
