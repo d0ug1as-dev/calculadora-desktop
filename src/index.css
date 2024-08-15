@@ -1,0 +1,119 @@
+*{
+  box-sizing: border-box;
+}
+.container {  
+  display: grid;
+  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-rows: 30px 50px 50px 50px 50px 50px 50px 50px;
+  gap: 5px 5px;
+  grid-auto-flow: row dense;
+  grid-template-areas:
+  ". . . btnHistory"
+  "operacao operacao operacao operacao"
+    "visor visor visor dell"
+    "cReset divisao multiplicacao subtracao"
+    "sete oito nove porcentagem"
+    "quatro cinco seis adicao"
+    "um dois tres igual"
+    "lzero lzero ponto igual";
+    margin: 10px auto 0;
+    position: relative;
+    width: fit-content;
+}
+.visor { 
+  grid-area: visor; 
+  border: 1px solid #797979; 
+  text-align: right;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #d6d6d6;
+  color: #131313;
+}
+.dell { 
+  grid-area: dell; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.operacao { 
+  grid-area: operacao;
+  text-align: end; 
+  padding: 10px 10px;
+  overflow: auto;
+}
+.igual { grid-area: igual; }
+
+.btnHistory { 
+  grid-area: btnHistory;
+  width: 60px;
+  font-size: 0.6rem;
+}
+
+.zero { grid-area: lzero; }
+
+.ponto { grid-area: ponto; }
+
+
+.cReset { grid-area: cReset; }
+
+.um { grid-area: um; }
+
+.dois { grid-area: dois; }
+
+.tres { grid-area: tres; }
+
+.quatro { grid-area: quatro; }
+
+.cinco { grid-area: cinco; }
+
+.seis { grid-area: seis; }
+
+.sete { grid-area: sete; }
+
+.oito { grid-area: oito; }
+
+.nove { grid-area: nove; }
+
+.divisao { grid-area: divisao; }
+
+.multiplicacao { grid-area: multiplicacao; }
+
+.subtracao { grid-area: subtracao; }
+
+.porcentagem { grid-area: porcentagem; }
+
+.adicao { grid-area: adicao; }
+
+
+.historico { 
+  display: block;
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  bottom: 0;
+  z-index: 100;
+  padding: 16px 10px;
+  overflow:auto; 
+  background-color: #ffffff;
+  box-shadow: 0px -2px 6px #9e9e9e;
+  border-top-left-radius: 10px ;
+  border-top-right-radius: 10px;
+}
+.b-gray{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  height: 400px;
+  width: 100%;
+  background-color: #00000085;
+  border-radius: 2px;
+}
+.disabilita{
+  display: none;
+}
+.resultHistorico, .operacao, .visor{
+  letter-spacing: 3px;
+}
