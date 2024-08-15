@@ -3,6 +3,7 @@ let num1 = [];
 let num2 = [];
 let operador;
 let arrayResult = [];
+let resultHisto;
 
 /* pegando valor dos numeros e jogando no visor e no operador acima */
 function getValue(varNum, varTag){
@@ -81,3 +82,39 @@ function btnDell(){
     getValue('visor', '.visor').value  = arrayResult.join('')
         getValue('operacao', '.operacao').innerText = arrayResult.join('')
 }
+
+/* execultando operacao no visor e mandando para o historico */
+function funOperacao(){
+    let result;
+    if( operador !== "%" ){
+     result = eval(getValue('operacao', '.operacao').innerText)
+ resultHisto  = getValue('operacao', '.operacao').innerText = `${getValue('operacao', '.operacao').innerText} = ${result.toLocaleString('pt-BR')}`
+ return resultHisto
+    }else{
+        resultHisto  =  `${num1.join('')} % ${num2.join('')} = ${funPorcentagem()}`
+        getValue('operacao', '.operacao').innerText  =  `${num1.join('')} % ${num2.join('')} = ${funPorcentagem()}`
+     }
+ }
+/* criando historico */
+ function historico(){
+    let criaTag = document.createElement('p')
+    criaTag.textContent += resultHisto
+    getValue('resultHistorico', '.resultHistorico').appendChild(criaTag)
+}
+/* abrindo historico */
+getValue('btnHistory', '.btnHistory').addEventListener('click', function(){
+    getValue('b.gray', '.b-gray').classList.remove("disabilita");
+    getValue('historico', '.historico').classList.remove("disabilita");
+})
+/* fechando historico */
+getValue('b-gray', '.b-gray').addEventListener('click', function(){
+    getValue('b.gray', '.b-gray').classList.add("disabilita");
+    getValue('historico', '.historico').classList.add("disabilita");
+})
+
+/* botão igual (submit) */
+getValue('igual', '.igual').addEventListener('click', function(e){
+    funOperacao()
+    historico()
+    limpaStage()
+})
