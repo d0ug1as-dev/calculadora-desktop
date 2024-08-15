@@ -51,6 +51,17 @@ function validaOperador(){
     getValue('visor', '.visor').value  += operador
     getValue('operacao', '.operacao').innerText +=  operador
 }
+/* validando operacao de porcentagem */
+getValue('porcentagem', '.porcentagem').addEventListener('click', funPorcentagem)
+function funPorcentagem(){
+    let resltPorcent; 
+    operador = this.value
+    arrayResult.push(operador)
+    getValue('visor', '.visor').value  += operador
+    
+     resltPorcent = (num1.join('') / 100) * num2.join('')
+  return  resltPorcent
+}
 /* LIMPANDO PARA UMA NOVA OPERAÇÃO */
 function limpaStage(){
     num1.splice(0, arrayResult.length)
